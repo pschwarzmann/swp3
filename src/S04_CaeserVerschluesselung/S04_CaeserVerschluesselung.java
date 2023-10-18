@@ -1,40 +1,36 @@
 package S04_CaeserVerschluesselung;
 import java.util.Scanner;
+
 public class S04_CaeserVerschluesselung {
 
-
     public static void main(String[] args) {
-        String result = encrypt(1, "Hallo");
+        String result = encrypt(1, "Hallo Welt");
         System.out.println(result);
-
     }
-    public static String encrypt(int shift, String StringAuslesung) {
 
-        String AusgelesenerString = "";
-        StringAuslesung = "";
-
-
+    public static String encrypt(int shift, String stringAuslesung) {
+        StringBuilder ausgelesenerString = new StringBuilder();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("---------------------------Menue---------------------------");
         System.out.println("Geben Sie den Text ein den Sie verschlüsseln wollen: ");
-
-        StringAuslesung = scanner.next();
+        stringAuslesung = scanner.nextLine();
 
         System.out.println("---------------------------Menue---------------------------");
-        System.out.println("Um wie viel möchten Sie den text verschieben: ");
+        System.out.println("Um wie viel möchten Sie den Text verschieben: ");
         shift = scanner.nextInt();
 
-        char[] inputData = StringAuslesung.toCharArray();
+        for (int i = 0; i < stringAuslesung.length(); i++) {
+            char letter = stringAuslesung.charAt(i);
 
-        for (int i = 0; i < inputData.length; i++) {
-            int letter = inputData[i] + shift;
-            AusgelesenerString += Character.toString(letter);
+            if (Character.isLetter(letter)) {
+                char base = Character.isUpperCase(letter) ? 'A' : 'a';
+                letter = (char)(((letter - base + shift) % 26 + 26) % 26 + base);
+            }
+
+            ausgelesenerString.append(letter);
         }
 
-        return AusgelesenerString;
-
-
-
+        return ausgelesenerString.toString();
     }
 }
