@@ -33,7 +33,7 @@ public class TestIT {
 
         //Autodaten
         if (iEingabe == 1){
-            System.out.println();
+            System.out.println(auto.getiLeistung());
         };
 
         // Turboboost
