@@ -15,10 +15,26 @@ public class Auto {
 
     private String sHonk = "";
 
-
+    private int iRemainingRange = 0;
 
     //get und setter
 
+
+    public int getSetiFuel() {
+        return setiFuel;
+    }
+
+    public void setSetiFuel(int setiFuel) {
+        this.setiFuel = setiFuel;
+    }
+
+    public int getiRemainingRange() {
+        return iRemainingRange;
+    }
+
+    public void setiRemainingRange(int iRemainingRange) {
+        this.iRemainingRange = iRemainingRange;
+    }
 
     public String getsHonk() {
         return sHonk;
