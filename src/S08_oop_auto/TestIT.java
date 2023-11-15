@@ -12,6 +12,7 @@ public class TestIT {
         int iEingabe = 0;
         int iAmountofRepetitions = 0;
 
+
         //Ausgabe Auto
         Auto auto = new Auto();
         auto.setiLeistung(200);
@@ -21,6 +22,7 @@ public class TestIT {
         auto.setiFualkap(300);
         auto.setsHonk("");
 
+
         //Menü
         System.out.println("--------------------------Menue--------------------------");
         System.out.println("Was moechten Sie machen?");
@@ -28,6 +30,11 @@ public class TestIT {
         System.out.print("->");
         iEingabe = scanner.nextInt();
 
+
+        //Autodaten
+        if (iEingabe == 1){
+            System.out.println();
+        };
 
         // Turboboost
         if (iEingabe == 2){
@@ -40,6 +47,7 @@ public class TestIT {
                 System.out.println("Not enough fuel!");
             }
         }
+
 
         //Hupen
         if (iEingabe == 3){
