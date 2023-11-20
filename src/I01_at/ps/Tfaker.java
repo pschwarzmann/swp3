@@ -21,7 +21,13 @@ public class Tfaker {
                 String lastName = faker.name().lastName();
                 String streetAddress = faker.address().streetAddress();
 
-                myWriter.write(name + " " + firstName + " " + lastName + " " + streetAddress + "\n");
+                if(i == 99){
+                    myWriter.write(
+                            "('"+name + "','"+firstName + "','" + lastName  +"','"  +streetAddress +"');"+ "\n");
+                }else {
+                    myWriter.write(
+                            "('"+name + "','"+firstName + "','" + lastName  +"','"  +streetAddress +"'),"+ "\n");
+                };
 
             }
             myWriter.close();
@@ -37,12 +43,18 @@ public class Tfaker {
             FileWriter myWriter = new FileWriter("Insertdaten2.txt");
             for (int i = 0; i <100; i++) {
 
-                String name = faker.funnyName().name();
-                String firstName = faker.artist().name();
-                String lastName = faker.app().name();
-                String streetAddress = String.valueOf(faker.number());
+                String lustigername = faker.funnyName().name();
+                String artistname = faker.artist().name();
+                String nachname = faker.app().name();
+                String code = faker.code().ean8();
 
-                myWriter.write(name + " " + firstName + " " + lastName + " " + streetAddress + "\n");
+                if(i == 99){
+                    myWriter.write(
+                            "('"+lustigername + "','"+artistname + "','" + nachname  +"','"  +code +"');"+ "\n");
+                }else {
+                    myWriter.write(
+                            "('"+lustigername + "','"+artistname + "','" + nachname  +"','"  +code +"'),"+ "\n");
+                };
 
             }
             myWriter.close();
@@ -58,12 +70,18 @@ public class Tfaker {
             FileWriter myWriter = new FileWriter("Insertdaten3.txt");
             for (int i = 0; i <100; i++) {
 
-                String name = faker.animal().name();
-                String firstName = faker.beer().name();
-                String lastName = faker.book().author();
-                String streetAddress = faker.code().asin();
+                String tier = faker.animal().name();
+                String bier = faker.beer().name();
+                String buchauthor = faker.book().author();
+                String katze = faker.cat().name();
 
-                myWriter.write(name + " " + firstName + " " + lastName + " " + streetAddress + "\n");
+                if(i == 99){
+                    myWriter.write(
+                            "('"+tier + "','"+bier + "','" + buchauthor  +"','"  +katze +"');"+ "\n");
+                }else {
+                    myWriter.write(
+                            "('"+tier + "','"+bier + "','" + buchauthor  +"','"  +katze +"'),"+ "\n");
+                };
 
             }
             myWriter.close();
@@ -78,12 +96,18 @@ public class Tfaker {
             FileWriter myWriter = new FileWriter("Insertdaten4.txt");
             for (int i = 0; i <100; i++) {
 
-                String name = faker.aviation().toString();
-                String firstName = faker.avatar().toString();
-                String lastName = faker.book().genre();
-                String streetAddress = faker.animal().toString();
+                String music = faker.music().genre();
+                String zelda = faker.zelda().character();
+                String dragonball = faker.dragonBall().character();
+                String superheld = faker.superhero().name();
 
-                myWriter.write(name + " " + firstName + " " + lastName + " " + streetAddress + "\n");
+                if(i == 99){
+                    myWriter.write(
+                            "('"+music + "','"+zelda + "','" + dragonball  +"','"  +superheld +"');"+ "\n");
+                }else {
+                    myWriter.write(
+                            "('"+music + "','"+zelda + "','" + dragonball  +"','"  +superheld +"'),"+ "\n");
+                };
 
             }
             myWriter.close();
