@@ -6,15 +6,6 @@ public class TestIT {
 
     public static void main(String[] args) {
 
-        //Deklaration
-        double dFaktor = 0.10;
-        Scanner scanner = new Scanner(System.in);
-        int iEingabe = 0;
-        int iAmountofRepetitions = 0;
-        int inEingabe = 0;
-        double fVerbrauchsfaktor = 9.17;
-
-
         //Ausgabe Auto
         Auto auto = new Auto();
         auto.setiLeistung(200);
@@ -24,6 +15,16 @@ public class TestIT {
         auto.setiFualkap(300);
         auto.setsHonk("");
         auto.setiRemainingRange(0);
+
+
+        //Deklaration
+        double dFaktor = 0.10;
+        Scanner scanner = new Scanner(System.in);
+        int iEingabe = 0;
+        int iAmountofRepetitions = 0;
+        int inEingabe = 0;
+        double fVerbrauchsfaktor = 9.17;
+
 
 
         do {
@@ -37,11 +38,14 @@ public class TestIT {
             //Tanken
             System.out.println("Wie viel Tank möchten sie ins Auto füllen(bis 300 Liter möglich)?");
             System.out.print("->");
-            auto.setiFuel = scanner.nextInt();
-            if (auto.setiFuel > 300){
+            double dtest = scanner.nextDouble();
+            if (dtest > 300){
                 System.out.println("Sie haben zu viel getankt(der Stand bleibt bei 300 Litern)!");
                 auto.setiFuel(300);
             };
+            double dTankpreis = 1.5 * dtest;
+            auto.setiFuel((int) dtest);
+            System.out.println("Sie Zahlen " + dTankpreis + " €!");
             System.out.println("-----------------------------------------------------------------------");
             //Verweisung zum Menü
             System.out.println("Wenn sie die Daten gelesen haben und den Tank befüllt haben\ndrücken Sie die 0:");

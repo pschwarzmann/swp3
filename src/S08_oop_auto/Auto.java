@@ -2,10 +2,10 @@ package S08_oop_auto;
 
 public class Auto {
 
-    public int setiFuel;
+    public double setiFuel;
     private int iLeistung = 0;
 
-    private int iFuel = 0;
+    private double iFuel = 0;
 
     private String sBrand = "";
 
@@ -20,11 +20,11 @@ public class Auto {
     //get und setter
 
 
-    public int getSetiFuel() {
+    public double getSetiFuel() {
         return setiFuel;
     }
 
-    public void setSetiFuel(int setiFuel) {
+    public void setSetiFuel(double setiFuel) {
         this.setiFuel = setiFuel;
     }
 
@@ -60,7 +60,7 @@ public class Auto {
         this.iLeistung = iLeistung;
     }
 
-    public int getiFuel() {
+    public double getiFuel() {
         return iFuel;
     }
 
