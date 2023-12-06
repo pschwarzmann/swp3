@@ -1,43 +1,35 @@
 package S08_oop_auto;
 
+import java.util.Scanner;
+
 public class Auto {
 
     private int iLeistung;
-    private double iFuel;
     private String sBrand;
     private String sSerialnumber;
-    private int iFualkap;
     private String sHonk;
     private int iRemainingRange;
-    private String sEngine;
+    private Engine engine;
+    private Tank tank;
 
-
-    public Auto(int iLeistung, double iFuel, String sBrand, String sSerialnumber, int iFualkap, String sHonk, int iRemainingRange, String sEngine) {
+    public Auto(int iLeistung, String sBrand, String sSerialnumber, String sHonk, int iRemainingRange) {
         this.iLeistung = iLeistung;
-        this.iFuel = iFuel;
         this.sBrand = sBrand;
         this.sSerialnumber = sSerialnumber;
-        this.iFualkap = iFualkap;
         this.sHonk = sHonk;
         this.iRemainingRange = iRemainingRange;
-        this.sEngine = sEngine;
     }
 
-    // Getter und Setter für die vorhandenen Attribute
+    public Auto() {
+
+    }
+
     public int getiLeistung() {
         return iLeistung;
     }
 
     public void setiLeistung(int iLeistung) {
         this.iLeistung = iLeistung;
-    }
-
-    public double getiFuel() {
-        return iFuel;
-    }
-
-    public void setiFuel(double iFuel) {
-        this.iFuel = iFuel;
     }
 
     public String getsBrand() {
@@ -56,15 +48,7 @@ public class Auto {
         this.sSerialnumber = sSerialnumber;
     }
 
-    public int getiFualkap() {
-        return iFualkap;
-    }
-
-    public void setiFualkap(int iFualkap) {
-        this.iFualkap = iFualkap;
-    }
-
-    public String getsHonk(int iAmountofRepetitions) {
+    public String getsHonk() {
         return sHonk;
     }
 
@@ -78,17 +62,5 @@ public class Auto {
 
     public void setiRemainingRange(int iRemainingRange) {
         this.iRemainingRange = iRemainingRange;
-    }
-
-    public String getsHonk() {
-        return sHonk;
-    }
-
-    public String getsEngine() {
-        return sEngine;
-    }
-
-    public void setsEngine(String sEngine) {
-        this.sEngine = sEngine;
     }
 }
