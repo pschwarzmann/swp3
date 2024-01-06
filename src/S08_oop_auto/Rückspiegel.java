@@ -2,42 +2,30 @@ package S08_oop_auto;
 
 public class Rückspiegel {
 
-    private String Rückspiegel1;
-    private String Rückspiegel2;
-    private String HerstellerRückspiegel;
+    private int Größe;
+    private int Postion;
 
 
     //Constructor
-
-    public Rückspiegel(String rückspiegel1, String rückspiegel2, String herstellerRückspiegel) {
-        Rückspiegel1 = rückspiegel1;
-        Rückspiegel2 = rückspiegel2;
-        HerstellerRückspiegel = herstellerRückspiegel;
+    public Rückspiegel(int größe, int postion) {
+        Größe = größe;
+        Postion = postion;
     }
 
     //getter setter
-
-    public String getRückspiegel1() {
-        return Rückspiegel1;
+    public int getGröße() {
+        return Größe;
     }
 
-    public void setRückspiegel1(String rückspiegel1) {
-        Rückspiegel1 = rückspiegel1;
+    public void setGröße(int größe) {
+        Größe = größe;
     }
 
-    public String getRückspiegel2() {
-        return Rückspiegel2;
+    public int getPostion() {
+        return Postion;
     }
 
-    public void setRückspiegel2(String rückspiegel2) {
-        Rückspiegel2 = rückspiegel2;
-    }
-
-    public String getHerstellerRückspiegel() {
-        return HerstellerRückspiegel;
-    }
-
-    public void setHerstellerRückspiegel(String herstellerRückspiegel) {
-        HerstellerRückspiegel = herstellerRückspiegel;
+    public void setPostion(int postion) {
+        Postion = postion;
     }
 }

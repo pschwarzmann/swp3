@@ -2,60 +2,26 @@ package S08_oop_auto;
 
 public class Reifen {
 
-    private String Reifen1;
-    private String Reifen2;
-    private String Reifen3;
-    private String Reifen4;
+    private int Zoll;
     private String ReifenHersteller;
-    private double Reifenbreite;
-    private String Reifenart;
+    private int Reifenbreite;
 
 
     //Construcator
-
-    public Reifen(String reifen1, String reifen2, String reifen3, String reifen4, String reifenHersteller, double reifenbreite, String reifenart) {
-        Reifen1 = reifen1;
-        Reifen2 = reifen2;
-        Reifen3 = reifen3;
-        Reifen4 = reifen4;
+    public Reifen(int zoll, String reifenHersteller, int reifenbreite) {
+        Zoll = zoll;
         ReifenHersteller = reifenHersteller;
         Reifenbreite = reifenbreite;
-        Reifenart = reifenart;
     }
 
 
     //getter setter
-
-    public String getReifen1() {
-        return Reifen1;
+    public int getZoll() {
+        return Zoll;
     }
 
-    public void setReifen1(String reifen1) {
-        Reifen1 = reifen1;
-    }
-
-    public String getReifen2() {
-        return Reifen2;
-    }
-
-    public void setReifen2(String reifen2) {
-        Reifen2 = reifen2;
-    }
-
-    public String getReifen3() {
-        return Reifen3;
-    }
-
-    public void setReifen3(String reifen3) {
-        Reifen3 = reifen3;
-    }
-
-    public String getReifen4() {
-        return Reifen4;
-    }
-
-    public void setReifen4(String reifen4) {
-        Reifen4 = reifen4;
+    public void setZoll(int zoll) {
+        Zoll = zoll;
     }
 
     public String getReifenHersteller() {
@@ -66,19 +32,11 @@ public class Reifen {
         ReifenHersteller = reifenHersteller;
     }
 
-    public double getReifenbreite() {
+    public int getReifenbreite() {
         return Reifenbreite;
     }
 
-    public void setReifenbreite(double reifenbreite) {
+    public void setReifenbreite(int reifenbreite) {
         Reifenbreite = reifenbreite;
-    }
-
-    public String getReifenart() {
-        return Reifenart;
-    }
-
-    public void setReifenart(String reifenart) {
-        Reifenart = reifenart;
     }
 }

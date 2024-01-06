@@ -8,11 +8,23 @@ public class TestIT {
 
     public static void main(String[] args) {
 
-        Autodaten auto = new Autodaten(200, "Porsche", "AC1234", "huuup", 0);
+        Auto auto = new Auto(200, "Porsche", "AC1234", "huuup", 0);
         Engine engine = new Engine(0);
         Tank tank = new Tank(300, 0);
-        Reifen reifen = new Reifen("Reifen links vorne funktioniert", "Reifen rechts vorne funktioniert", "Reifen links hinten funktioniert", "Reifen rechts hinten funktioniert", "Michelin", 32, "Radial");
-        Rückspiegel rückspiegel = new Rückspiegel("Rückspiegel links funktioniert", "Rückspiegel rechts funktioniert", "Porsche");
+        Rückspiegel rückspiegel1 = new Rückspiegel(20, 5);
+        Rückspiegel rückspiegel2 = new Rückspiegel(20, 15);
+        Reifen reifen1 = new Reifen(23, "Michelin", 32);
+        Reifen reifen2 = new Reifen(23, "Michelin", 32);
+        Reifen reifen3 = new Reifen(23, "Michelin", 32);
+        Reifen reifen4 = new Reifen(23, "Michelin", 32);
+
+        auto.addReifen(reifen1);
+        auto.addReifen(reifen2);
+        auto.addReifen(reifen3);
+        auto.addReifen(reifen4);
+        auto.addRückspiegel(rückspiegel1);
+        auto.addRückspiegel(rückspiegel2);
+
 
         Scanner scanner = new Scanner(System.in);
         double dtest;
@@ -26,6 +38,8 @@ public class TestIT {
             System.out.println("Die Auto Marke lautet " + auto.getsBrand() + ".");
             System.out.println("Die Auto Seriennummer lautet " + auto.getsSerialnumber() + ".");
             System.out.println("Die Auto Tankkappazität liegt bei " + tank.getiFualkap() + " Liter.");
+            System.out.println("Informationen zu beiden Rückspiegel:\nRückspiegel1: Position:" + auto.getRückspiegel().get(0).getPostion() + " Größe:" + auto.getRückspiegel().get(0).getGröße() + "\nRückspiegel2: Position:" + auto.getRückspiegel().get(1).getPostion() + " Größe:" + auto.getRückspiegel().get(1).getGröße());
+            System.out.println("Informationen zu den Reifen(Sie wird nur einmal ausgegeben da alle 4 gleich sind):\nZoll:" +auto.getReifens().get(0).getZoll() + " Hersteller:"  + auto.getReifens().get(0).getReifenHersteller() + " Reifenbreite:" + auto.getReifens().get(0).getReifenbreite());
             System.out.println("-----------------------------------------------------------------------");
 
             System.out.println("Wie viel Tank möchten Sie ins Auto füllen (bis 300 Liter möglich)?");
@@ -65,8 +79,6 @@ public class TestIT {
                 breakMethod(auto);
             } else if (inEingabe == 5) {
                 gangschaltung(engine);
-            }else if (inEingabe == 6) {
-                infoReifenRücksp(rückspiegel, reifen);
             }
 
         } while (0 != inEingabe);
@@ -85,7 +97,7 @@ public class TestIT {
         }
     }
 
-    private static void honkMenu(Autodaten auto) {
+    private static void honkMenu(Auto auto) {
         System.out.println("-----------------------------------------------------------------------");
         System.out.print("Wie viel willst du hupen? ");
         int iWiederholungen = scanner.nextInt();
@@ -98,7 +110,7 @@ public class TestIT {
 
     }
 
-    private static void remainingRange(Tank tank, Autodaten auto) {
+    private static void remainingRange(Tank tank, Auto auto) {
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("Berechnung der möglichen Reichweite...");
         auto.setiRemainingRange((int) (tank.getiFuel() * 9.17));
@@ -106,7 +118,7 @@ public class TestIT {
 
     }
 
-    private static void breakMethod(Autodaten auto) {
+    private static void breakMethod(Auto auto) {
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("Ich bremse");
     }
@@ -130,10 +142,4 @@ public class TestIT {
         }
     }
 
-    private static void infoReifenRücksp(Rückspiegel rückspiegel, Reifen reifen){
-        System.out.println("-----------------------------------------------------------------------");
-        System.out.println("Hier die Infos zu den Reifen und zu den Rückspiegeln:\n");
-        System.out.println("Reifen:\n" + reifen.getReifen1() + "\n" + reifen.getReifen2() + "\n" + reifen.getReifen3() + "\n" + reifen.getReifen4() + "\nReifenhersteller: " + reifen.getReifenHersteller() + "\nReifenbreite: " + reifen.getReifenbreite() + "cm\nReifenart: " + reifen.getReifenart() + "\n");
-        System.out.println("Rückspiegel:\n" + rückspiegel.getRückspiegel1() + "\n" + rückspiegel.getRückspiegel2() + "\nRückspiegerlhersteller: " + rückspiegel.getHerstellerRückspiegel() + "\n");
-    }
 }
