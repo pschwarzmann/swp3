@@ -1,18 +1,15 @@
 package S08_oop_auto;
 
-import java.util.Scanner;
-
-public class Auto {
+public class Autodaten {
 
     private int iLeistung;
     private String sBrand;
     private String sSerialnumber;
     private String sHonk;
     private int iRemainingRange;
-    private Engine engine;
-    private Tank tank;
 
-    public Auto(int iLeistung, String sBrand, String sSerialnumber, String sHonk, int iRemainingRange) {
+
+    public Autodaten(int iLeistung, String sBrand, String sSerialnumber, String sHonk, int iRemainingRange) {
         this.iLeistung = iLeistung;
         this.sBrand = sBrand;
         this.sSerialnumber = sSerialnumber;
@@ -20,7 +17,7 @@ public class Auto {
         this.iRemainingRange = iRemainingRange;
     }
 
-    public Auto() {
+    public Autodaten() {
 
     }
 
