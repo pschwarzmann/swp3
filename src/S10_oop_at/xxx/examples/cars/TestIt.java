@@ -1,22 +1,23 @@
 package S10_oop_at.xxx.examples.cars;
 
 import java.util.ArrayList;
+
 public class TestIt {
+
     public static void main(String[] args) {
-        Hersteller toyota = new Hersteller("Toyota", "Japan", 5.0);
-        Hersteller audi = new Hersteller("Audi", "Deutschland", 7.5);
 
-        Motor benzinMotor = new Motor("Benzin", 150);
-        Motor dieselMotor = new Motor("Diesel", 120);
+        Motor motor = new Motor(500, "Diesel");
+        Auto auto = new Auto("silber", 315, 160000, 7, motor, 1);
+        Hersteller hersteller = new Hersteller("Porsche GT4", 4, "Deutschland");
 
-        ArrayList<Auto> autos = new ArrayList<>();
+        System.out.println("Hier alle Daten zum Motor des Autos:\nLeistung: " + motor.getLeistung() + "PS\nMotortyp: " + motor.getType());
+        System.out.println("\nHier alle Infos zum Auto:\nFarbe: "+ auto.getFarbe() + "\nMax Geschwindigkeit: "+ auto.getMasgeschwindigkeit() + "Km/h\nBasispreis: "+ auto.getBasispreis() + "€\nBasisverbrauch: "+ auto.getBasisverbrauch() + "L/Km\nGefahrene km: "+ auto.getGefahrenekm());
+        System.out.println("\nHier alle Infos zum Hersteller des Autos:\nMarke + Modell: " + hersteller.getMarke() + "\nRabbat in %: " + hersteller.getRabatt() + "\nHerkunftsland: " + hersteller.getHerkunftsland());
 
-        autos.add(new Auto("Blau", 200, 25000.0, 6.5, toyota, benzinMotor));
-        autos.add(new Auto("Rot", 220, 30000.0, 7.0, audi, dieselMotor));
+        hersteller.addAuto(auto);
+        auto.setHersteller(hersteller);
 
-        for (Auto auto : autos) {
-            auto.zeigeInformationen();
-            System.out.println("----------------------");
-        }
+        auto.preisberech();
+        auto.fahren();
     }
 }
