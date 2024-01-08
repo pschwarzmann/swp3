@@ -5,7 +5,8 @@ class Fotodatei {
     private int größe;
     private String name;
 
-    // Konstruktor
+
+    //constructor
     public Fotodatei(int erweiterung, int größe, String name) {
         this.erweiterung = erweiterung;
         this.größe = größe;
@@ -16,8 +17,9 @@ class Fotodatei {
         return "Name: " + this.name + ", Größe: " + this.größe;
     }
 
-    // Getter und Setter
 
+
+    //getter setter
     public int getErweiterung() {
         return erweiterung;
     }

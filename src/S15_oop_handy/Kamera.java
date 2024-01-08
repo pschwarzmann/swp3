@@ -4,11 +4,14 @@ class Kamera {
     private int auflösung;
     private Speicherkarte sdkarte;
 
-    // Konstruktor
+
+
+    //constructor
     public Kamera(int auflösung, Speicherkarte sdkarte) {
         this.auflösung = auflösung;
         this.sdkarte = sdkarte;
     }
+
 
     public void Bild(int erweiterung, String name) {
         Fotodatei fotodatei = new Fotodatei(erweiterung, this.auflösung, name);
@@ -16,8 +19,9 @@ class Kamera {
         sdkarte.Dateispeichern();
     }
 
-    // Getter und Setter
 
+
+    //getter setter
     public int getAuflösung() {
         return auflösung;
     }

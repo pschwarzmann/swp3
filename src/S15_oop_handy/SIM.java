@@ -4,11 +4,14 @@ class SIM {
     private int id;
     private String nummer;
 
-    // Konstruktor
+
+    //constructor
     public SIM(int id, String nummer) {
         this.id = id;
         this.nummer = nummer;
     }
+
+
 
     public void Sim(int id, String nummer) {
         System.out.println(id);
@@ -20,8 +23,10 @@ class SIM {
         System.out.println("...");
     }
 
-    // Getter und Setter
 
+
+
+    //getter setter
     public int getId() {
         return id;
     }

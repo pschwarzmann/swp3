@@ -8,7 +8,9 @@ public class Handy {
     private Speicherkarte sdkarte;
     private SIM sim;
 
-    // Konstruktor
+
+
+    //constructor
     public Handy(String farbe, Kamera kamera, Speicherkarte sdkarte, SIM sim) {
         this.farbe = farbe;
         this.kamera = kamera;
@@ -16,19 +18,21 @@ public class Handy {
         this.sim = sim;
     }
 
+
     public void Foto(int erweiterung, String name) {
         kamera.Bild(erweiterung, name);
     }
 
+
     public void AlleDateien() {
-        List<Fotodatei> filesList = sdkarte.getAlledateien();
-        for (Fotodatei file : filesList) {
-            System.out.println(file.getInfo());
+        List<Fotodatei> dateiliste = sdkarte.getAlledateien();
+        for (Fotodatei datei : dateiliste) {
+            System.out.println(datei.getInfo());
         }
     }
 
-    public void Anrufen(String number) {
-        sim.Anrufen(number);
+    public void Anrufen(String nummer) {
+        sim.Anrufen(nummer);
     }
 
     public int Speicherplatz() {
@@ -37,9 +41,8 @@ public class Handy {
     }
 
 
-    // Getter und Setter
 
-
+    //getter setter
     public String getFarbe() {
         return farbe;
     }

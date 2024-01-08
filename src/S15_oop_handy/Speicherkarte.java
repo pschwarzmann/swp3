@@ -8,11 +8,14 @@ class Speicherkarte {
     private List<Fotodatei> dateien;
     private Kamera getKamera;
 
-    // Konstruktor
+
+
+    //constructor
     public Speicherkarte(int kapazität) {
         this.kapazität = kapazität;
         this.dateien = new ArrayList<>();
     }
+
 
     public void addDatei(Fotodatei fotodatei) {
         this.dateien.add(fotodatei);
@@ -21,8 +24,8 @@ class Speicherkarte {
     public int getSpeicherplatz() {
         int x = 0;
         int y;
-        for (Fotodatei file : this.dateien) {
-            x += file.getGröße();
+        for (Fotodatei datei : this.dateien) {
+            x += datei.getGröße();
         }
         y = this.kapazität - x;
         return y;
