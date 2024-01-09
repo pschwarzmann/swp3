@@ -12,20 +12,17 @@ public class Linse {
 
 
 
-    public int dateigröße(){
-        switch(pixel){
-            case 2000:
-                größe = 2;
-                break;
-            case 4000:
-                größe = 4;
-                break;
-            case 6000:
-                größe = 6;
-                break;
-            default:
-                break;
+    public int dateigröße() {
+        if (pixel == 2000) {
+            größe = 2;
+        } else if (pixel == 4000) {
+            größe = 4;
+        } else if (pixel == 6000) {
+            größe = 6;
+        } else {
+
         }
+
         return größe;
     }
 
